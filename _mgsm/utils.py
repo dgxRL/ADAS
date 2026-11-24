@@ -10,33 +10,7 @@ LANG_TO_INSTRUCTIONS = {
     "en": """Solve this math problem.
 
 {input}""",
-    "bn": """এই গণিতের সমস্যাটি সমাধান করুন।
 
-{input}""",
-    "de": """Löse dieses Mathematikproblem.
-
-{input}""",
-    "es": """Resuelve este problema matemático.
-
-{input}""",
-    "fr": """Résolvez ce problème de mathématiques.
-
-{input}""",
-    "ja": """この数学の問題を解いてください。
-
-{input}""",
-    "ru": """Решите эту математическую задачу.
-
-{input}""",
-    "sw": """Suluhisha tatizo hili la hesabu.
-
-{input}""",
-    "te": """ఈ గణిత సమస్యను పరిష్కరించండి.
-
-{input}""",
-    "th": """แก้ปัญหาคณิตศาสตร์นี้
-
-{input}""",
     "zh": """解决这个数学问题。
 
 {input}"""
@@ -44,7 +18,7 @@ LANG_TO_INSTRUCTIONS = {
 
 LANG_TO_FPATH = lambda lang: f"dataset/mgsm/mgsm_{lang}.tsv"
 
-ALL_LANGUAGES = ["bn", "de", "en", "es", "fr", "ja", "ru", "sw", "te", "th", "zh"]
+ALL_LANGUAGES = ["en", "zh"]
 
 
 def score_mgsm(target: str, prediction: str) -> bool:

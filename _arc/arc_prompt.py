@@ -238,7 +238,7 @@ import openai
 import backoff
 
 # Initialize the OpenAI client
-client = openai.OpenAI()
+client = openai.OpenAI(base_url="http://mydgx0:8888/v1", api_key="local")
 
 # Named tuple for holding information
 Info = namedtuple('Info', ['name', 'author', 'content', 'iteration_idx'])
@@ -296,7 +296,7 @@ class LLMAgentBase:
     - id (str): Unique identifier for the agent instance.
     \"""
 
-    def __init__(self, output_fields: list, agent_name: str, role='helpful assistant', model='gpt-3.5-turbo-0125', temperature=0.5) -> None:
+    def __init__(self, output_fields: list, agent_name: str, role='helpful assistant', model='GLM-5.3-Flash', temperature=0.5) -> None:
         self.output_fields = output_fields
         self.agent_name = agent_name
         self.role = role

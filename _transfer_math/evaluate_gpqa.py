@@ -9,7 +9,7 @@ import backoff
 import openai
 from tqdm import tqdm
 
-client = openai.OpenAI()
+client = openai.OpenAI(base_url="http://mydgx0:8888/v1", api_key="local")
 
 from gpqa_utils import load_questions, random_id, bootstrap_confidence_interval
 
@@ -68,7 +68,7 @@ class LLMAgentBase():
     """
 
     def __init__(self, output_fields: list, agent_name: str,
-                 role='helpful assistant', model='gpt-3.5-turbo-0125', temperature=0.5) -> None:
+                 role='helpful assistant', model='GLM-5.3-Flash', temperature=0.5) -> None:
         self.output_fields = output_fields
         self.agent_name = agent_name
 
@@ -247,8 +247,8 @@ if __name__ == "__main__":
     parser.add_argument('--eval_file_path', type=str, default='')
     parser.add_argument('--model',
                         type=str,
-                        default='gpt-4o-2024-05-13',
-                        choices=['gpt-4-turbo-2024-04-09', 'gpt-3.5-turbo-0125', 'gpt-4o-2024-05-13'])
+                        default='GLM-5.3-Flash',
+                        choices=['GLM-5.3-Flash'])
 
     args = parser.parse_args()
 
